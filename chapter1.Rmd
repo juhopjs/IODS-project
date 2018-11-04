@@ -1,7 +1,7 @@
 
 # About the project
 
-This Introduction to Open Data Science 2018 course RMarkdown file. On this course you can learn the basics of R, GIT and Data Science.
+This Introduction to Open Data Science 2018 course RMarkdown file. On this course you can learn the basics of R, GIT and Data Science!
 
 Here you will find **my** GIT for this project:
 <https://github.com/juhopjs/IODS-project>

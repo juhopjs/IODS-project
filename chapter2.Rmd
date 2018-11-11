@@ -16,7 +16,42 @@ dim(students2014)
 ```
 Questions from different categories we combined into means for each student. Students with 0 points were left out.
 
-## 2.2 Blah
+## 2.2 Graphical overview
+
+
+```{r, echo=FALSE, include=FALSE}
+library(GGally)
+library(ggplot2)
+```
+Scatter plot matrix of the dataset broken down by gender.
+```{r, echo=FALSE}
+
+p <- ggpairs(students2014, mapping = aes(col = gender, alpha = 0.3), lower = list(combo = wrap("facethist", bins = 20)))
+p
+
+```
+  
+Summaries of each column of the dataset:
+```{r, echo=TRUE}
+
+summary(students2014$gender)
+summary(students2014$Age)
+summary(students2014$Attitude)
+summary(students2014$deep)
+summary(students2014$stra)
+summary(students2014$surf)
+summary(students2014$Points)
+
+```
+Findings:
+
+* From the plot it can be seen that the strongest correlation can be found between Attitude and Points.
+* Majority of the students are in the twenties. Older students increase the age mean heavily compared to median.
+
+## 2.3 Model
+
+
+
 
 
 

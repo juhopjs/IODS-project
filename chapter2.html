@@ -126,7 +126,9 @@ $(document).ready(function () {
 
 <div id="regression-and-model-validation" class="section level1">
 <h1>2. Regression and model validation</h1>
-<p>The dataset used in this exercise includes performance, age and gender of students combined with a questionnaire about attitude, surface thinking, strategic thinking and deep thinking.</p>
+<div id="dataset" class="section level2">
+<h2>2.1 Dataset</h2>
+<p>The dataset used in this exercise includes exam points, age and gender of students combined with a questionnaire about attitude, surface thinking, strategic thinking and deep thinking.</p>
 <p><a href="http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS3-meta.txt">This</a> link will include more information about the original dataset.</p>
 <p>The dataset structure and dimensions are the following:</p>
 <pre class="r"><code>str(students2014)</code></pre>
@@ -140,13 +142,13 @@ $(document).ready(function () {
 ##  $ Points  : int  25 12 24 10 22 21 21 31 24 26 ...</code></pre>
 <pre class="r"><code>dim(students2014)</code></pre>
 <pre><code>## [1] 166   7</code></pre>
-<p><em>Describe the work you have done this week and summarize your learning.</em> Dataset was prepared</p>
-<ul>
-<li>Describe your work and results clearly.</li>
-<li>Assume the reader has an introductory course level understanding of writing and reading R code as well as statistical methods</li>
-<li>Assume the reader has no previous knowledge of your data or the more advanced methods you are using</li>
-</ul>
+<p>Questions from different categories we combined into means for each student. Students with 0 points were left out.</p>
+</div>
+<div id="blah" class="section level2">
+<h2>2.2 Blah</h2>
+<p><em>Describe the work you have done this week and summarize your learning.</em></p>
 <p>Read the students2014 data into R either from your local folder (if you completed the Data wrangling part) or from this url: <a href="http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/learning2014.txt" class="uri">http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/learning2014.txt</a> . (The separator is a comma “,” and the file includes a header). Explore the structure and the dimensions of the data and describe the dataset briefly, assuming the reader has no previous knowledge of it. There is information related to the data here. (0-2 points)</p>
+</div>
 </div>
 
 

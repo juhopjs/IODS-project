@@ -145,27 +145,47 @@ $(document).ready(function () {
 
 <div id="TOC">
 <ul>
-<li><a href="#about-the-project">About the project</a></li>
-<li><a href="#insert-chapter-2-title-here">Insert chapter 2 title here</a></li>
+<li><a href="#about-the-project">1. About the project</a></li>
+<li><a href="#regression-and-model-validation">2. Regression and model validation</a><ul>
+<li><a href="#dataset">2.1 Dataset</a></li>
+<li><a href="#blah">2.2 Blah</a></li>
+</ul></li>
 </ul>
 </div>
 
 <hr />
 <div id="about-the-project" class="section level1">
-<h1>About the project</h1>
+<h1>1. About the project</h1>
 <p>This Introduction to Open Data Science 2018 course RMarkdown file. On this course you can learn the basics of R, GIT and Data Science!</p>
 <p>Here you will find <strong>my</strong> GIT for this project: <a href="https://github.com/juhopjs/IODS-project" class="uri">https://github.com/juhopjs/IODS-project</a></p>
 <hr />
 </div>
-<div id="insert-chapter-2-title-here" class="section level1">
-<h1>Insert chapter 2 title here</h1>
+<div id="regression-and-model-validation" class="section level1">
+<h1>2. Regression and model validation</h1>
+<div id="dataset" class="section level2">
+<h2>2.1 Dataset</h2>
+<p>The dataset used in this exercise includes exam points, age and gender of students combined with a questionnaire about attitude, surface thinking, strategic thinking and deep thinking.</p>
+<p><a href="http://www.helsinki.fi/~kvehkala/JYTmooc/JYTOPKYS3-meta.txt">This</a> link will include more information about the original dataset.</p>
+<p>The dataset structure and dimensions are the following:</p>
+<pre class="r"><code>str(students2014)</code></pre>
+<pre><code>## 'data.frame':    166 obs. of  7 variables:
+##  $ gender  : Factor w/ 2 levels &quot;F&quot;,&quot;M&quot;: 1 2 1 2 2 1 2 1 2 1 ...
+##  $ Age     : int  53 55 49 53 49 38 50 37 37 42 ...
+##  $ Attitude: int  37 31 25 35 37 38 35 29 38 21 ...
+##  $ deep    : num  3.58 2.92 3.5 3.5 3.67 ...
+##  $ stra    : num  3.38 2.75 3.62 3.12 3.62 ...
+##  $ surf    : num  2.58 3.17 2.25 2.25 2.83 ...
+##  $ Points  : int  25 12 24 10 22 21 21 31 24 26 ...</code></pre>
+<pre class="r"><code>dim(students2014)</code></pre>
+<pre><code>## [1] 166   7</code></pre>
+<p>Questions from different categories we combined into means for each student. Students with 0 points were left out.</p>
+</div>
+<div id="blah" class="section level2">
+<h2>2.2 Blah</h2>
 <p><em>Describe the work you have done this week and summarize your learning.</em></p>
-<ul>
-<li>Describe your work and results clearly.</li>
-<li>Assume the reader has an introductory course level understanding of writing and reading R code as well as statistical methods</li>
-<li>Assume the reader has no previous knowledge of your data or the more advanced methods you are using</li>
-</ul>
+<p>Read the students2014 data into R either from your local folder (if you completed the Data wrangling part) or from this url: <a href="http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/learning2014.txt" class="uri">http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/learning2014.txt</a> . (The separator is a comma “,” and the file includes a header). Explore the structure and the dimensions of the data and describe the dataset briefly, assuming the reader has no previous knowledge of it. There is information related to the data here. (0-2 points)</p>
 <hr />
+</div>
 </div>
 
 

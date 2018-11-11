@@ -1,8 +1,6 @@
 # 2. Regression and model validation
 
-*This week I learned to do regression models in R and doing some basic model diagnostics.
-
-*Describe the work you have done this week and summarize your learning.*
+This week I learned to do regression models in R and doing some basic model diagnostics. Here are the exercises.
 
 ## 2.1 Dataset
 The dataset used in this exercise includes exam points, age and gender of students combined with a questionnaire about attitude, surface thinking, strategic thinking and deep thinking.
@@ -51,6 +49,7 @@ Findings:
 
 * From the plot it can be seen that the strongest correlation can be found between Attitude and Points.
 * Majority of the students are in the twenties. Older students increase the age mean heavily compared to median.
+* Twice as many females as males.
 
 ## 2.3 Regression model and validation
 
@@ -58,7 +57,7 @@ To fit a regression model, 3 variables with highest correlation  towards target 
 
 * Attitude (0.437)
 * Strategic thinking (0.146)
-* Surcace thinking (-0.144)
+* Surface thinking (-0.144)
 
 The following multiple regression model was created:
 ```{r, echo=FALSE}

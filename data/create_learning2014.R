@@ -45,11 +45,11 @@ str(learning2014)
 #The data has now 166 observations of 7 variables.
 
 setwd("C:/R_work/GIT/IODS-project/IODS-project")
-write.csv(learning2014, file = "learning2014.csv")
-readtest<-read.csv(file= "learning2014.csv",colClasses=c("NULL",NA,NA,NA,NA,NA,NA,NA))
+write.table(learning2014, file = "learning2014.csv")
+readtest<-read.table(file= "learning2014.csv")
 str(readtest)
 head(readtest)
-#The dataset appears to be right. When reading, colClasses were defined to exlude the ID to follow the structure of original stored dataset.
-
+rm(readtest)
+#The dataset appears to be right.
 
 

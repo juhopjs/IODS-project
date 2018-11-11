@@ -1,5 +1,9 @@
 # 2. Regression and model validation
 
+*This week I learned to do regression models in R and doing some basic model diagnostics.
+
+*Describe the work you have done this week and summarize your learning.*
+
 ## 2.1 Dataset
 The dataset used in this exercise includes exam points, age and gender of students combined with a questionnaire about attitude, surface thinking, strategic thinking and deep thinking.
 
@@ -48,16 +52,48 @@ Findings:
 * From the plot it can be seen that the strongest correlation can be found between Attitude and Points.
 * Majority of the students are in the twenties. Older students increase the age mean heavily compared to median.
 
-## 2.3 Model
+## 2.3 Regression model and validation
+
+To fit a regression model, 3 variables with highest correlation  towards target variable Points were selected. Those were:
+
+* Attitude (0.437)
+* Strategic thinking (0.146)
+* Surcace thinking (-0.144)
+
+The following multiple regression model was created:
+```{r, echo=FALSE}
+my_model <- lm(Points ~ Attitude + stra + surf, data = students2014)
+summary(my_model)
+
+```
+Points of the students vary from 7 to 33, while half of the students points can be predicted within 3.64 points or less. Residual standard error is 5.296.
+
+Based on the model summary only Attitude is statistically significant predictor. A new model is fitted using only Attitude as a predictor.
+
+```{r, echo=FALSE}
+my_model2 <- lm(Points ~ Attitude, data = students2014)
+summary(my_model2)
+
+```
+After removing two statistically insignificant predictors, the resudual standard error is 5.32, slightly weaker than in the previous model.
+
+The summary can be interpereted so that the model predicts the following linear fit: When attitude is 0, points would be 11.64. When attitude increases by 1, points increase by 0.35. Multiple R squared of the model represents the average error that the model makes in its predictions.
+
+Finally, diagnostic plots on Residuals vs Fitted values, Normal QQ-plot and Residuals vs Leverage are presented below.
+
+```{r, echo=FALSE}
+
+par(mfrow = c(2,2))
+plot(my_model2, which=c(1,2, 5))
+```
+
+The model has been built with the following assumptions:
+
+* The errors are normally distributed
+    + Based on the Normal Q-Q plot we can say that the normality assumption is here reasonable. The standardized residuals follow the line.
+* The errors have constant variance & the errors are not correlated
+    + On the resudials vs. Fitted plot there seems to be no patterns, which indicates that the assuptions are correct.
+* The size of a given error does not depend on the explanatory variables
+    + On the Residuals vs Leverage plot no points seem to have too much leverage, so this assumption is true.
 
 
-
-
-
-
-
-
-
-*Describe the work you have done this week and summarize your learning.*
-
-Read the students2014 data into R either from your local folder (if you completed the Data wrangling part) or from this url: http://s3.amazonaws.com/assets.datacamp.com/production/course_2218/datasets/learning2014.txt . (The separator is a comma "," and the file includes a header). Explore the structure and the dimensions of the data and describe the dataset briefly, assuming the reader has no previous knowledge of it. There is information related to the data here. (0-2 points)
